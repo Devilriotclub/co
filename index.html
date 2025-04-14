@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SchreibApp Pro</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&family=Montserrat&family=Courier+Prime&family=Georgia&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="toolbar">
+    <select id="fontSelector">
+      <option value="Arial">Arial</option>
+      <option value="Verdana">Verdana</option>
+      <option value="Georgia">Georgia</option>
+      <option value="'Courier Prime', monospace">Courier Prime</option>
+      <option value="'Open Sans', sans-serif">Open Sans</option>
+      <option value="'Raleway', sans-serif">Raleway</option>
+      <option value="'Montserrat', sans-serif">Montserrat</option>
+    </select>
+
+    <select id="fontSizeSelector">
+      <option value="12px">12</option>
+      <option value="14px">14</option>
+      <option value="16px" selected>16</option>
+      <option value="18px">18</option>
+      <option value="24px">24</option>
+      <option value="32px">32</option>
+      <option value="48px">48</option>
+    </select>
+
+    <button onclick="format('bold')">Fett</button>
+    <button onclick="format('italic')">Kursiv</button>
+    <button onclick="format('underline')">Unterstrichen</button>
+    <button onclick="format('insertUnorderedList')">• Liste</button>
+    <button onclick="format('justifyCenter')">Zentrieren</button>
+
+    <button onclick="insertLink()">🔗 Link</button>
+    <button onclick="insertImage()">🖼️ Bild</button>
+
+    <input type="color" id="textColor" onchange="setColor(this.value)" />
+    <input type="color" id="bgColor" onchange="setBg(this.value)" />
+
+    <button onclick="zoom('in')">Zoom +</button>
+    <button onclick="zoom('out')">Zoom -</button>
+
+    <button onclick="exportPDF()">📄 PDF</button>
+    <button onclick="window.print()">🖨️ Drucken</button>
+
+    <button onclick="toggleMode()">🌗 Mode</button>
+  </div>
+
+  <div id="editor" contenteditable="true"></div>
+</body>
+<script src="script.js"></script>
+</html>
